@@ -32,7 +32,11 @@ export default function SettingsModal({
       setDeviceId(currentSettings.deviceId || (devices[0]?.deviceId || ''));
       setResolution(currentSettings.resolution);
       setBitrate(currentSettings.bitrate);
-      setApiUrl(currentSettings.apiUrl);
+      if (currentSettings.apiUrl === 'http://localhost:8000') {
+        setApiUrl('/');
+      } else {
+        setApiUrl(currentSettings.apiUrl);
+      }
     }
   }, [isOpen, currentSettings, devices]);
 
