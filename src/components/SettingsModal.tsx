@@ -25,8 +25,6 @@ export default function SettingsModal({
   const [resolution, setResolution] = useState<string>('1920x1080');
   const [bitrate, setBitrate] = useState<number>(7500000);
   const [apiUrl, setApiUrl] = useState<string>('/');
-
-  // Sincronizar estados con settings actuales cuando se abre el modal
   useEffect(() => {
     if (isOpen) {
       setDeviceId(currentSettings.deviceId || (devices[0]?.deviceId || ''));
