@@ -24,7 +24,7 @@ export default function SettingsModal({
   const [deviceId, setDeviceId] = useState<string>('');
   const [resolution, setResolution] = useState<string>('1920x1080');
   const [bitrate, setBitrate] = useState<number>(7500000);
-  const [apiUrl, setApiUrl] = useState<string>('/');
+  const [apiUrl, setApiUrl] = useState<string>('http://localhost:8000');
 
   // Sincronizar estados con settings actuales cuando se abre el modal
   useEffect(() => {
@@ -142,7 +142,7 @@ export default function SettingsModal({
               type="text"
               value={apiUrl}
               onChange={(e) => setApiUrl(e.target.value)}
-              placeholder="http://localhost:8000"
+              placeholder="/"
               className="w-full bg-zinc-900 border border-white/10 hover:border-white/20 text-sm text-zinc-100 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all"
             />
           </div>
